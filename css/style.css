@@ -175,12 +175,17 @@ p{
   pointer-events:none ;
   background-color:white;
   color:white;
+  cursor: auto;
 }
 .letter:hover {
   transition: 0.2s linear;
   background-color: #3B717A;
 }
 
+.blank:hover{
+  background-color:white;
+  pointer-events:none;
+}
 .backspace {
   display: grid;
   place-items: center;
@@ -211,7 +216,7 @@ p{
 }
 .winner_info{
   
-  margin-top:80px;
+  margin-top:40px;
   width:100%;
   display:flex;
   justify-content: center;
@@ -299,11 +304,23 @@ p{
   justify-content:center;
   align-items:center;
   margin-top:25px;
+
   border-radius: 10px;
   border:2px solid white;
   height:40px;
+  padding:5px;
 }
-.winner_btn:hover{
+
+.winner_btn a{
+  width:100%;
+  color:white;
+  text-decoration: none;
+}
+.winner_buttons{
+  display:flex;
+  margin-top:10px;
+}
+  .winner_btn:hover{
   cursor: pointer;
   box-shadow: 0px 0px 10px 4px rgb(255, 255, 255);
 }
@@ -343,52 +360,3 @@ button{
     color:whitesmoke;
 }
 
-
-.banner{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: fixed;
-  z-index: 10;
-  width:100%;
-  height:100vh;
-  top:0;
-  left:0;
-  background-color:red;
-
-}
-
-.category{
-  position: absolute;
-
-  border:2px solid darkslategray;
-  border-radius: 10px;
-  
-  margin:20px;
-  width:160px;
-  
-  font-size:20px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.2s linear;
-}
-
-
-.category a{
-  display:grid;
-  place-items: center;  
-  color: darkslategray;
-  text-decoration: none;
-  width:100%;
-}
-
-.category:hover{
-  font-weight: normal;
-
-  background-color: darkslategray;
-  box-shadow:  0px 0px 8px 0px darkslategray;
-}
-.category:hover a{
-  color: white;
-}

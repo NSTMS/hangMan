@@ -37,13 +37,6 @@ header {
 
 }
 
-main{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .title{
   display:grid;
   place-items: center;
@@ -61,3 +54,53 @@ main{
   box-shadow:  0px 0px 12px 0px darkslategray;
 }
 
+.banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+button{
+  width:120px;
+  height:60px;
+  background-color: darkslategray;
+  color:whitesmoke;
+}
+
+.row{
+  display:flex;
+  margin-top:100px;
+}
+
+.category{
+
+  border:2px solid darkslategray;
+  border-radius: 10px;
+  
+  margin:20px;
+  width:160px;
+  
+  font-size:20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s linear;
+}
+
+
+.category a{
+  display:grid;
+  place-items: center;  
+  color: darkslategray;
+  text-decoration: none;
+  width:100%;
+}
+
+.category:hover{
+  font-weight: normal;
+
+  background-color: darkslategray;
+  box-shadow:  0px 0px 8px 0px darkslategray;
+}
+.category:hover a{
+  color: white;
+}

@@ -10,31 +10,6 @@
 </head>
 
 <body>
-
-    <!-- <div class="banner">
-            <div class="row">
-                <div class="category">
-                    <a id="1" href="index.html" onclick="setWordCategory(1);return false;">1</a>
-                </div>
-                <div class="category">
-                    <a id="2" href="index.html" onclick="setWordCategory(2);return false;">2</a>
-                </div>
-                <div class="category">
-                    <a id="3" href="index.html" onclick="setWordCategory(3);return false;">3</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="category">
-                    <a id="4" href="index.html" onclick="setWordCategory(4);return false;">4</a>
-                </div>
-                <div class="category">
-                    <a id="5" href="index.html" onclick="setWordCategory(5);return false;">5</a>
-                </div>
-                <div class="category">
-                    <a id="6" href="index.html" onclick="setWordCategory(6);return false;">6</a>
-                </div>
-    </div> -->
-
     <nav>
         <h1>HANGMAN</h1>
         <div class="more">
@@ -48,18 +23,6 @@
     
     <div class="container">
         <div class="forma">
-            <!-- <div class="progressbar_title">
-                <p>100%</p>
-                <p>80%</p>
-                <p>60%</p>
-                <p>40%</p>
-                <p>20%</p>
-                <p>10%</p>
-                <p>0%</p>
-            </div>
-            <div class="progressbar">
-                <div class="progress_element"></div>
-            </div> -->
             <div>
                 <img src="img/0.png" width="300px" height="400px" alt="img"  id="page_img">
             </div>
@@ -176,7 +139,7 @@
             <div class="letter l35" onclick="ifContains(`Ż`)">
                 <p>35</p>
             </div>
-            <div class="letter backspace"><a href="https://google.com" target="_blank"><img src="/img/hist.png" alt="back"></a></div>
+            <div class="letter backspace"><a href="https://google.com" target="_blank"><img src="./img/hist.png" alt="back"></a></div>
         </div>
         <div class="winner_container">
             <div class="winner_info">
@@ -188,11 +151,11 @@
                 <p class="your_points">0</p>
             </div>
             <img class="winner_img" src="img/okay.jpg" alt="dsf">
-
-            <button type="submit" class="winner_btn" onclick="next()">JESZCZE RAZ</button>
+            <div class="winner_buttons">
+                <button type="submit" style="margin-right:15px;" class="winner_btn" onclick="next()">JESZCZE RAZ</button>
+                <button type="submit" class="winner_btn"><a href="main.html">ZMIEŃ KATEGORIĘ</a></button>    
+            </div>
         </div>
-
-
     </div>
     
     <footer>
