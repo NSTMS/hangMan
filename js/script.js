@@ -281,7 +281,6 @@ function generateNewWord() {
 
 function randomWord() {
   const tempInt = Math.floor(Math.random() * words.length);
-  console.log(words)
   return words[tempInt].split("");
 }
 
