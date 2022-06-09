@@ -203,7 +203,17 @@ let disabledLetters = [
   "Control",
   "Enter"
 ];
-let TempdisabledLetters = disabledLetters
+let TempdisabledLetters = 
+[
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "Alt",
+  "AltGraph",
+  "Control",
+  "Enter"
+]
 
 let currentLetter = ""; // zaznaczona klasa
 let tabOfLetters = []; // tablica zaznaczonych klas
@@ -380,10 +390,12 @@ function next() {
   document.querySelector(".winner_container").style.display = "none";
 
   let minus = TempdisabledLetters.length - disabledLetters.length
+  console.log(minus)
   for(let i=0;i<minus;i++)
   { 
     TempdisabledLetters.pop()
   }
+  console.log(TempdisabledLetters)
   generateNewWord();
 }
 
