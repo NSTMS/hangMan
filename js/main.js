@@ -29,6 +29,6 @@ function setWordCategory(i)
     default:
       break;
   }
-  window.location = "index.html"
+  window.location = "main.html"
 
 }
