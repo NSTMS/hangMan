@@ -214,10 +214,8 @@ let ifAll = 0;
 const alphabetArr = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ".split("");
 
 
-
 setWordCategory(sessionStorage.getItem("parametr"));
 function setWordCategory(i) {
-  words = [];
   switch (i) {
     case "1":
       words = cat_1;
@@ -236,8 +234,6 @@ function setWordCategory(i) {
       break;
     case "6":
       words = cat_6;
-      break;
-    default:
       break;
   }
   game();
@@ -285,6 +281,7 @@ function generateNewWord() {
 
 function randomWord() {
   const tempInt = Math.floor(Math.random() * words.length);
+  console.log(words)
   return words[tempInt].split("");
 }
 

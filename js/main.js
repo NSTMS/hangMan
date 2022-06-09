@@ -1,5 +1,7 @@
 function setWordCategory(i)
 {
+  sessionStorage.clear();
+  
   switch(i)
   {
     case 1:
