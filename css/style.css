@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Mukta', sans-serif;
+}
+
+nav {
+  display:flex;
+  width: 100%;
+  height: 80px;
+  background-color:darkslategray;
+  justify-content: space-between;
+}
+
+h1{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  letter-spacing: 2px;
+  color:whitesmoke;
+  height:100%;
+  padding:20px;
+  width:160px;
+  background-color:rgb(36, 58, 58);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  bottom:0;
+  position:fixed;
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+  color:whitesmoke;
+  
+  background-color: darkslategray;
+}
+
+
+header{
+  display:flex;
+  justify-content: center;
+}
+/* .progressbar{
+  margin-right:200px;
+  width:120px;
+  height:400px;
+  border-radius: 5px;
+  border:3px solid darkslategray;
+  display:flex;
+  align-items: flex-end;
+}
+
+.progressbar_title{
+  position:absolute;
+  display:grid;
+  place-items: center;
+  font-size:24px;
+  height:400px;
+  margin-left:-70px;
+
+} 
+
+.progress_element{
+  height:395px;
+  width:100%;
+  background-color:darkslategray;
+  border:3px solid darkslategray;
+} */
+.forma img{
+  margin-right:100px;
+}
+.more{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  background-color:rgb(36, 58, 58);
+  width:160px;
+}
+
+.more > div{
+  padding:20px;
+  color:whitesmoke;
+  font-size:20px;
+  cursor: pointer;
+}
+
+.approaches{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  border-right:3px solid whitesmoke;
+  height:60%;
+
+}
+p{
+  pointer-events: none;
+}
+
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: column;
+  width: 100%;
+  margin-top: 120px;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+  footer,
+  nav {
+    position: relative;
+  }
+
+  .container {
+    grid-auto-flow: row;
+  }
+
+  .our_murder,
+  .alphabet {
+    margin-top: 100px;
+  }
+
+  .alphabet {
+    margin-bottom: 100px;
+  }
+  #page_img{
+    display:flex;
+    margin:0 auto;
+  }
+}
+
+
+.our_murder,
+.alphabet {
+  width: 800px;
+  height: 400px;
+  border: 2px solid darkslategray;
+}
+
+.our_murder {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+}
+
+
+
+.alphabet {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  padding: 20px;
+  place-items: center;
+  border-radius: 20px;
+  width:900px;
+}
+
+.letter {
+  width: 60px;
+  height: 60px;
+  border-radius: 25%;
+  background-color: #2f4f4f;
+  color: whitesmoke;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.blank{
+  pointer-events:none ;
+  background-color:white;
+  color:white;
+}
+.letter:hover {
+  transition: 0.2s linear;
+  background-color: #3B717A;
+}
+
+.backspace {
+  display: grid;
+  place-items: center;
+}
+
+.winner_container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);-index:10;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  background-color: darkslategray;
+  width:450px;
+  height:500px;
+  color:white;
+  border-radius: 20px;
+  animation: opacityChange 0.4s linear;
+  box-shadow: 0px 0px 24px 0px darkslategray;
+  
+}
+.winner_container img{
+  margin-top:40px;
+  width:180px;
+  border-radius: 7px;
+
+}
+.winner_info{
+  
+  margin-top:80px;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;  
+}
+.winner_title{
+  text-align: center;
+  font-size: 30px;
+  letter-spacing:2px;
+  text-transform: uppercase; 
+  margin:10px;
+  cursor: pointer;
+  width:60%;
+
+}
+.winner_down{
+  display:flex;
+  align-self: center;
+  height:3px;
+  background-color:white;
+  animation: width 4s linear infinite;
+}
+
+@keyframes opacityChange {
+  0%{
+    opacity:0%;
+  }
+  25%{
+   opacitywidth:25%;
+  }
+  50%{
+    opacity:50%;
+  }
+  75%{
+    opacity:75%;
+  }
+  100%{
+    opacity:100%;
+  }
+  
+}
+
+
+@keyframes width {
+  0%{
+    width:25%;
+  }
+  25%{
+    width:30%;
+  }
+  50%{
+    width:25%;
+  }
+  75%{
+    width:30%;
+  }
+  100%{
+    width:25%;
+  }
+  
+}
+
+
+.backspace img{
+  width:30px;
+  height:30px;
+}
+.backspace a{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin:0 auto;
+}
+.winners_points{
+  display:flex;
+  margin-top:20px;
+
+}
+.points_title{
+  margin-right:5px;
+}
+.winner_btn{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:25px;
+  border-radius: 10px;
+  border:2px solid white;
+  height:40px;
+}
+.winner_btn:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 4px rgb(255, 255, 255);
+}
+.page_title {
+  height: 100%;
+  margin-top:100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.downBorder {
+  font-size: 26px;
+  width: 30px;
+  height: 40px;
+  display: grid;
+  place-content: center;
+  border-bottom: 3px solid darkslategray;
+  margin: 6px;
+}
+
+.incorrectAnswer {
+  background-color: #e71d36;
+  pointer-events: none;
+
+}
+
+.correctAnswer {
+  background-color: darkolivegreen;
+  pointer-events: none;
+}
+
+button{
+    width:120px;
+    height:60px;
+    background-color: darkslategray;
+    color:whitesmoke;
+}
+
+
+.banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 10;
+  width:100%;
+  height:100vh;
+  top:0;
+  left:0;
+  background-color:red;
+
+}
+
+.category{
+  position: absolute;
+
+  border:2px solid darkslategray;
+  border-radius: 10px;
+  
+  margin:20px;
+  width:160px;
+  
+  font-size:20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s linear;
+}
+
+
+.category a{
+  display:grid;
+  place-items: center;  
+  color: darkslategray;
+  text-decoration: none;
+  width:100%;
+}
+
+.category:hover{
+  font-weight: normal;
+
+  background-color: darkslategray;
+  box-shadow:  0px 0px 8px 0px darkslategray;
+}
+.category:hover a{
+  color: white;
+}
