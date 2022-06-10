@@ -108,9 +108,10 @@ let cat_4 = [
   "WILK",
   "NIEDŹWIEDŹ",
   "ORZEŁ",
-  "ŚWISTAK"];
+  "ŚWISTAK",
+];
 let cat_5 = [
-  "WIECZNOŚĆ", 
+  "WIECZNOŚĆ",
   "HALLOWEEN",
   "MÓZG",
   "KREATYNA",
@@ -125,27 +126,27 @@ let cat_5 = [
   "MOMENT",
   "CHWILA",
   "ZEGAR",
-"KAPIBARA",
-"SŁONECZNIK",
-"TAPETA",
-"FOTOGRAF",
-"SZCZOTECZKA",
-"BAŻANT",
-"KAKTUS",
-"DŁUGOPIS",
-"PERFUMY",
-"DEZODORANT",
-"TORBA",
-"PÓŁKA",
-"SŁOIK",
-"SUSZARKA",
-"ZASŁONY",
-"KALORYFER",
-"HIPOPOTAM",
-"AKROBATA",
-"SOJUSZNIK",
-"SŁOWO",
-"ŚNIEG",
+  "KAPIBARA",
+  "SŁONECZNIK",
+  "TAPETA",
+  "FOTOGRAF",
+  "SZCZOTECZKA",
+  "BAŻANT",
+  "KAKTUS",
+  "DŁUGOPIS",
+  "PERFUMY",
+  "DEZODORANT",
+  "TORBA",
+  "PÓŁKA",
+  "SŁOIK",
+  "SUSZARKA",
+  "ZASŁONY",
+  "KALORYFER",
+  "HIPOPOTAM",
+  "AKROBATA",
+  "SOJUSZNIK",
+  "SŁOWO",
+  "ŚNIEG",
   "KATANA",
   "PANTOFLE",
   "ZIEMIA",
@@ -189,7 +190,6 @@ let cat_6 = [
   "EKSPERYMENTY",
   "NIEBEZPIECZEŃSTWO",
   "PRZESŁUCHANIE",
- 
 ];
 let words = [];
 
@@ -201,10 +201,9 @@ let disabledLetters = [
   "Alt",
   "AltGraph",
   "Control",
-  "Enter"
+  "Enter",
 ];
-let TempdisabledLetters = 
-[
+let TempdisabledLetters = [
   "ArrowUp",
   "ArrowDown",
   "ArrowLeft",
@@ -212,8 +211,8 @@ let TempdisabledLetters =
   "Alt",
   "AltGraph",
   "Control",
-  "Enter"
-]
+  "Enter",
+];
 
 let currentLetter = ""; // zaznaczona klasa
 let tabOfLetters = []; // tablica zaznaczonych klas
@@ -221,35 +220,34 @@ let currentPassword = ""; // tablica z haslem
 let hangPoints = 0; // punkty
 let hangApproaches = 11; // dozwolone podejścia
 let ifAll = 0;
-const alphabetArr = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ".split("");
-
+let alphabetArr = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŹŻ".split("");
 
 setWordCategory(sessionStorage.getItem("parametr"));
 function setWordCategory(i) {
   switch (i) {
     case "1":
       words = cat_1;
-      document.querySelector("._category").textContent = "JEDZENIE"
+      document.querySelector("._category").textContent = "JEDZENIE";
       break;
     case "2":
       words = cat_2;
-      document.querySelector("._category").textContent = "AUTA"
+      document.querySelector("._category").textContent = "AUTA";
       break;
     case "3":
       words = cat_3;
-      document.querySelector("._category").textContent = "ROŚLINY"
+      document.querySelector("._category").textContent = "ROŚLINY";
       break;
     case "4":
       words = cat_4;
-      document.querySelector("._category").textContent = "ZWIERZĘTA"
+      document.querySelector("._category").textContent = "ZWIERZĘTA";
       break;
     case "5":
       words = cat_5;
-      document.querySelector("._category").textContent = "RÓŻNE"
+      document.querySelector("._category").textContent = "RÓŻNE";
       break;
     case "6":
       words = cat_6;
-      document.querySelector("._category").textContent = "TRUDNE"
+      document.querySelector("._category").textContent = "TRUDNE";
       break;
   }
   game();
@@ -277,7 +275,6 @@ function generateNewWord() {
   while (remove.lastElementChild) {
     remove.removeChild(remove.lastElementChild);
   }
-
 
   let passwordInPieces = randomWord();
   for (i of passwordInPieces) {
@@ -324,7 +321,8 @@ function ifContains(thisLetter) {
       if (ifAll == currentPassword.length) {
         hangPoints++;
 
-        TempdisabledLetters = disabledLetters + alphabetArr
+        TempdisabledLetters = disabledLetters + alphabetArr;
+        TempdisabledLetters = TempdisabledLetters.split(",");
         document.querySelector(".winner_container").style.display = "flex";
         document.querySelector(".winner_title").textContent = "Wygrałeś";
         hangApproaches = 11;
@@ -340,16 +338,15 @@ function ifContains(thisLetter) {
 
       if (hangApproaches > 1) {
         hangApproaches = hangApproaches - 1;
-        console.log(hangApproaches)
+        console.log(hangApproaches);
         document.getElementById("page_img").src = `img/${
           11 - hangApproaches
         }.png`;
         document.querySelector(currentLetter).classList.add("incorrectAnswer");
         document.querySelector(".approaches").textContent = hangApproaches;
       } else {
-
-        TempdisabledLetters = disabledLetters + alphabetArr
-
+        TempdisabledLetters = disabledLetters + alphabetArr;
+        TempdisabledLetters = TempdisabledLetters.split(",");
 
         for (i of currentPassword) {
           let els = document.querySelectorAll(`.${i}`);
@@ -362,11 +359,9 @@ function ifContains(thisLetter) {
           blockLetters[i].style["pointer-events"] = "none";
         }
 
-
         document.querySelector(".winner_title").textContent = "Przegałeś!";
         document.querySelector(".winner_container").style.display = "flex";
         hangPoints = 0;
-        hangApproaches = 11;
         document.querySelector(".points").textContent = hangPoints;
         document.querySelector(".approaches").textContent = hangApproaches;
       }
@@ -375,8 +370,6 @@ function ifContains(thisLetter) {
 }
 
 function clearAnswers() {
-
-
   if (tabOfLetters.length != 0) {
     let currentClass;
     for (let i of tabOfLetters) {
@@ -393,25 +386,19 @@ function clearAnswers() {
   tabOfLetters = [];
   hangApproaches = 11;
   ifAll = 0;
-
 }
 
 function next() {
   document.getElementById("page_img").src = `img/0.png`;
   document.querySelector(".winner_container").style.display = "none";
 
-  let minus = TempdisabledLetters.length - disabledLetters.length
-  console.log(minus)
-  for(let i=0;i<minus;i++)
-  { 
-    TempdisabledLetters.pop()
+  let minus = TempdisabledLetters.length - disabledLetters.length;
+  for (let i = 0; i < minus; i++) {
+    TempdisabledLetters.pop();
   }
-  console.log(TempdisabledLetters)
   generateNewWord();
 }
 
 window.addEventListener("keydown", function (event) {
-  if(!disabledLetters.includes(event.key)) 
-    ifContains(event.key.toUpperCase());
+  if (!disabledLetters.includes(event.key)) ifContains(event.key.toUpperCase());
 });
-
