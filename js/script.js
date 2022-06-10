@@ -324,7 +324,7 @@ function ifContains(thisLetter) {
         TempdisabledLetters = disabledLetters + alphabetArr;
         TempdisabledLetters = TempdisabledLetters.split(",");
         document.querySelector(".winner_container").style.display = "flex";
-        document.querySelector(".winner_title").textContent = "Wygrałeś";
+        document.querySelector(".winner_title").textContent = "Wygrałeś!";
         hangApproaches = 11;
         ifAll = 0;
         document.querySelector(".approaches").textContent = hangApproaches;
