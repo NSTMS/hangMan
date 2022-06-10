@@ -386,6 +386,9 @@ function clearAnswers() {
   tabOfLetters = [];
   hangApproaches = 11;
   ifAll = 0;
+  document.querySelector(".points").textContent = hangPoints;
+  document.querySelector(".approaches").textContent = hangApproaches;
+
 }
 
 function next() {
