@@ -323,6 +323,8 @@ function ifContains(thisLetter) {
 
       if (ifAll == currentPassword.length) {
         hangPoints++;
+
+        TempdisabledLetters = disabledLetters + alphabetArr
         document.querySelector(".winner_container").style.display = "flex";
         document.querySelector(".winner_title").textContent = "Wygrałeś";
         hangApproaches = 11;
@@ -345,6 +347,10 @@ function ifContains(thisLetter) {
         document.querySelector(currentLetter).classList.add("incorrectAnswer");
         document.querySelector(".approaches").textContent = hangApproaches;
       } else {
+
+        TempdisabledLetters = disabledLetters + alphabetArr
+
+
         for (i of currentPassword) {
           let els = document.querySelectorAll(`.${i}`);
           for (let i = 0; i < els.length; i++) {
@@ -355,6 +361,7 @@ function ifContains(thisLetter) {
         for (let i = 0; i < blockLetters.length; i++) {
           blockLetters[i].style["pointer-events"] = "none";
         }
+
 
         document.querySelector(".winner_title").textContent = "Przegałeś!";
         document.querySelector(".winner_container").style.display = "flex";
