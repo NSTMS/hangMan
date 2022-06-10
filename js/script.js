@@ -319,7 +319,6 @@ function ifContains(thisLetter) {
         hangPoints++;
         document.querySelector(".winner_container").style.display = "flex";
         document.querySelector(".winner_title").textContent = "Wygrałeś";
-        document.querySelector(".winner_img").src = "img/okay.jpg";
         hangApproaches = 11;
         ifAll = 0;
         document.querySelector(".approaches").textContent = hangApproaches;
@@ -351,9 +350,8 @@ function ifContains(thisLetter) {
           blockLetters[i].style["pointer-events"] = "none";
         }
 
-        document.querySelector(".winner_title").textContent = "Przegrałeś!";
+        document.querySelector(".winner_title").textContent = "Przegałeś!";
         document.querySelector(".winner_container").style.display = "flex";
-        document.querySelector(".winner_img").src = "img/sad.jpeg";
         hangPoints = 0;
         hangApproaches = 11;
         document.querySelector(".points").textContent = hangPoints;
