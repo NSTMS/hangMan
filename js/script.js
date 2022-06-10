@@ -229,21 +229,27 @@ function setWordCategory(i) {
   switch (i) {
     case "1":
       words = cat_1;
+      document.querySelector("._category").textContent = "JEDZENIE"
       break;
     case "2":
       words = cat_2;
+      document.querySelector("._category").textContent = "AUTA"
       break;
     case "3":
       words = cat_3;
+      document.querySelector("._category").textContent = "ROŚLINY"
       break;
     case "4":
       words = cat_4;
+      document.querySelector("._category").textContent = "ZWIERZĘTA"
       break;
     case "5":
       words = cat_5;
+      document.querySelector("._category").textContent = "RÓŻNE"
       break;
     case "6":
       words = cat_6;
+      document.querySelector("._category").textContent = "TRUDNE"
       break;
   }
   game();
